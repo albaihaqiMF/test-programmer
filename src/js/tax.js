@@ -11,7 +11,7 @@ function counter() {
   let tabungan = parseInt(elTabungan.value);
 
   hasil = tabungan;
-  for (let index = 0; index < tahun; index++) {
+  for (let i = 0; i < tahun; i++) {
     perTahun = hasil * (persen / 100);
     hasil = hasil + perTahun;
   }
