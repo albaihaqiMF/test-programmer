@@ -16,7 +16,7 @@ function value(r) {
   if (r == "C") return 100;
   if (r == "D") return 500;
   if (r == "M") return 1000;
-  return -1;
+  return 0;
 }
 
 function romanToDecimal(roman) {
@@ -28,7 +28,6 @@ function romanToDecimal(roman) {
 
     if (i + 1 < str.length) {
       var s2 = value(str.charAt(i + 1));
-
       if (s1 >= s2) {
         res = res + s1;
       } else {
