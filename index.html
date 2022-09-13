@@ -13,13 +13,13 @@
 <body>
     <div x-data="{sideActive: 'roman'}">
         <nav class="space-x-6 bg-blue-500 p-4 text-white">
-            <button @click="sideActive = 'tax'" class="hover:text-blue-500 px-6 py-3 rounded-full hover:bg-white"
-                :class="{'bg-white text-blue-500' : sideActive === 'tax' }">Tax Counter</button>
+            <button @click="sideActive = 'money'" class="hover:text-blue-500 px-6 py-3 rounded-full hover:bg-white"
+                :class="{'bg-white text-blue-500' : sideActive === 'money' }">Interest Money Counter</button>
             <button @click="sideActive = 'roman'" class="hover:text-blue-500 px-6 py-3 rounded-full hover:bg-white"
                 :class="{'bg-white text-blue-500' : sideActive === 'roman' }">Converter Romawi to Arabic number</button>
         </nav>
         <div class="p-4">
-            <div x-show="sideActive === 'tax'" class="space-y-3">
+            <div x-show="sideActive === 'money'" class="space-y-3">
                 <p>
                     Menghitung bunga pertahun
                 </p>
@@ -78,7 +78,7 @@
         </div>
     </div>
     <script src="/src/js/roman.js"></script>
-    <script src="/src/js/tax.js"></script>
+    <script src="/src/js/money.js"></script>
 </body>
 
 </html>
