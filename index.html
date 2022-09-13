@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Test Progammer</title>
+</head>
+
+<body>
+    <div x-data="{sideActive: 'roman'}">
+        <nav class="space-x-6 bg-blue-500 p-4 text-white">
+            <button @click="sideActive = 'tax'" class="hover:text-blue-500 px-6 py-3 rounded-full hover:bg-white"
+                :class="{'bg-white text-blue-500' : sideActive === 'tax' }">Tax Counter</button>
+            <button @click="sideActive = 'roman'" class="hover:text-blue-500 px-6 py-3 rounded-full hover:bg-white"
+                :class="{'bg-white text-blue-500' : sideActive === 'roman' }">Converter Romawi to Arabic number</button>
+        </nav>
+        <div class="p-4">
+            <div x-show="sideActive === 'tax'" class="space-y-3">
+                <p>
+                    Menghitung bunga pertahun
+                </p>
+                <div class="w-64">
+                    <label for="persen">Persentase</label>
+                    <div class="flex">
+                        <input type="number" min="1" max="100" id="persen"
+                            class="ring-2 ring-blue-200 active:ring-blue-500 rounded-l-lg px-4 py-2 w-full"
+                            placeholder="Persentasi bunga" value="12">
+                        <div class="w-full bg-slate-200 w-20 flex items-center px-6 rounded-r-lg ring-2 ring-slate-300">
+                            %
+                        </div>
+                    </div>
+                </div>
+                <div class="w-64">
+                    <label for="tahun">Tahun</label>
+                    <input type="number" min="0" id="tahun"
+                        class="ring-2 ring-blue-200 active:ring-blue-500 rounded-lg px-4 py-2 w-full"
+                        placeholder="Masukkan lama menabung">
+                </div>
+                <div class="w-64">
+                    <label for="tabungan">Tabungan</label>
+                    <input type="number" min="0" id="tabungan"
+                        class="ring-2 ring-blue-200 active:ring-blue-500 rounded-lg px-4 py-2 w-full"
+                        placeholder="Masukkan jumlah tabungan">
+                </div>
+                <div class="w-64 flex pt-6 space-x-2">
+                    <input type="text" id="hasil"
+                        class="ring-2  ring-blue-200 active:ring-blue-500 rounded-lg px-4 py-2 w-full"
+                        placeholder="Hasil" disabled>
+                    <button
+                        class="class px-4 py-2 bg-blue-500 hover:bg-blue-100 rounded-lg text-white hover:text-blue-500"
+                        onclick="counter()">Hitung</button>
+                </div>
+            </div>
+            <div x-show="sideActive === 'roman'">
+                <p>
+                    Menemukan angka arab dari romawi
+                </p>
+                <div class="w-64 "></div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/js/roman.js"></script>
+    <script src="/src/js/tax.js"></script>
+</body>
+
+</html>
