@@ -4,7 +4,8 @@ let romanNumeric = [];
 
 function generate() {
   let roman = elRoman.value;
-  document.getElementById("arabic").value = romanToDecimal(roman);
+  document.getElementById("arabic").value =
+    romanToDecimal(roman) <= 3999 ? romanToDecimal(roman) : "error";
 }
 
 function value(r) {
